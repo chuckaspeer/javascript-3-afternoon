@@ -8,7 +8,7 @@
 
 ////////// PROBLEM 1 //////////
 
-// Do not edit the code below.
+//Do not edit the code below.
 var carDetails = {
   color: 'red',
   make: 'toyota',
@@ -22,6 +22,7 @@ var carDetails = {
 */
 
 //Code Here
+var {color, make, model, year} = carDetails;
 
 
 
@@ -33,9 +34,9 @@ var carDetails = {
   The property names are firstName, lastName, and title.
 */
 
-function greeting( obj ) {
+ function greeting( obj ) {
   //Code Here
-  
+  var {firstName,lastName,title} = obj;
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
@@ -53,9 +54,14 @@ function greeting( obj ) {
   Sum up the values and return the total number.
 */
 
-//Code Here
-
-
+// // //Code Here
+function totalPopulation (obj){
+  var devStates = {utah, california, texas, arizona} = obj;
+  sumStates = utah + california + texas + arizona;
+  console.log(sumStates);
+  return sumStates;
+}
+totalPopulation({utah: 55, california: 34, texas: 100, arizona: 10 })
 
 ////////// PROBLEM 4 //////////
 
@@ -67,8 +73,16 @@ function greeting( obj ) {
   Push these new variables to an array and return the array. 
 */
 
-//Code Here
-
+// // //Code Here
+function ingredients(obj){
+  var newArr = [];
+  var {carb, fat, protein} = obj;
+  for (var key in obj){
+    newArr.push(obj[key])
+  }
+  return newArr;
+}
+ingredients({carb: 'Roll', fat: "lard", protein: "steak"});
 
 
 ////////// PROBLEM 5 //////////
@@ -86,7 +100,18 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function largeNumbers(obj){
+  var valuesArray = [];
+  var {first, second, third} = obj
+  for (let key in obj){
+    valuesArray.push(obj[key]);
+    var orderedValues =valuesArray.sort(function(a,b) {return a -b})
+    var smallest = orderedValues[0];
+  }
+  console.log(largeNumbers)
+  return smallest;
+}
+largeNumbers({first :9, second: 5, third: 7});
 
 
 ////////// PROBLEM 6 //////////
@@ -98,5 +123,13 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function numberGroups ({a, b, c}){
+if (a.length > b.length && a.length > c.length){
+  return a;
+}else if (b.length > a.length && b.length > c.length){
+  return b;
+}else if ((c.length > a.length && c.length > b.length)){
+  return c;
+}
+}
 

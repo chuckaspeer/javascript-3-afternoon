@@ -41,7 +41,13 @@
 
 function showValues( obj ) {
   //Code Here
+  let arr =[];
+  for(let key in obj){
+  arr.push(obj[key])
 }
+return arr.join("")
+}
+
 
 
 
@@ -54,6 +60,16 @@ function showValues( obj ) {
 */
 
 //Code Here
+function greaterThan10(obj){
+  for(var key in obj){
+    if(obj[key]>10){
+      obj[key]=0;
+
+    }
+  }
+  return obj;
+}
+
 
 
 
@@ -66,6 +82,12 @@ function showValues( obj ) {
 */
 
 //Code Here
+function double(obj){
+  for(var key in obj){
+    obj[key] =obj[key]* 2;
+  }
+  return obj;
+}
 
 
 
@@ -80,7 +102,15 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+function secrets(obj){
+  let emStr = '';
+for(let key in obj){
+  if (key.startsWith('sh')){
+    emStr += obj[key];
+  }
+}
+return emStr;
+}
 
 
 /* 
@@ -111,7 +141,14 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+function removePassword(obj){
+  for(let key in obj){
+    if(key === "password"){
+      delete obj[key];
+    }
+  }
+  return obj;
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -130,11 +167,19 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
+function removeBig(obj){
+  for(let key in obj){
+    if(obj[key]>100){
+      delete obj[key];
+    }
+  }
+  return obj;
+}
 
+removeBig(deleteTheBigNumbers);
 
 
 ////////// PROBLEM 7 //////////
-
 /*
   Write a function called startsWithK that takes an object as a parameter.
   Write a for in loop to loop over the object.
@@ -158,5 +203,7 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
+
+
 
 
